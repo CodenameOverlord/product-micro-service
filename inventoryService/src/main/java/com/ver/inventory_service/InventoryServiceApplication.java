@@ -5,8 +5,10 @@ import com.ver.inventory_service.repository.InventoryRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 
+@EnableDiscoveryClient
 @SpringBootApplication
 public class InventoryServiceApplication {
 
@@ -14,6 +16,7 @@ public class InventoryServiceApplication {
 		SpringApplication.run(InventoryServiceApplication.class, args);
 	}
 
+	/* commented so that repeated data is not there
 	@Bean
 	public CommandLineRunner loadData(InventoryRepository inventoryRepository){
 		return args-> {
@@ -28,4 +31,6 @@ public class InventoryServiceApplication {
 			inventoryRepository.save(inventory);
 		};
 	}
+
+	 */
 }
